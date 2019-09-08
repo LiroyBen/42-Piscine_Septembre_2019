@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenaim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/06 14:42:11 by lbenaim           #+#    #+#             */
-/*   Updated: 2019/09/08 22:24:01 by lbenaim          ###   ########.fr       */
+/*   Created: 2019/09/08 19:12:14 by lbenaim           #+#    #+#             */
+/*   Updated: 2019/09/08 22:26:37 by lbenaim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-char *ft_strcat(char *dest, char *src)
+char *ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	int i;
-	int n;
+	int h;
 
 	i = 0;
 	n = 0;
@@ -23,9 +23,9 @@ char *ft_strcat(char *dest, char *src)
 	{
 		i++;
 	}
-	while (src[n] != '\0')
+	while (src[h] != '\0')
 	{
-		dest[i + n] = src[n];
+		dest[i + h] = src[n];
 		n++;
 	}
 	return(dest);

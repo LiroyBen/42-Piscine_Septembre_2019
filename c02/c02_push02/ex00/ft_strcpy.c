@@ -1,39 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenaim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/06 14:42:11 by lbenaim           #+#    #+#             */
-/*   Updated: 2019/09/08 22:24:01 by lbenaim          ###   ########.fr       */
+/*   Created: 2019/09/04 16:34:14 by lbenaim           #+#    #+#             */
+/*   Updated: 2019/09/05 18:17:41 by lbenaim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-char *ft_strcat(char *dest, char *src)
+char	*ft_strcpy(char *dest, char *src)
 {
-	int i;
-	int n;
+	unsigned int avance;
 
-	i = 0;
-	n = 0;
-	while (dest[i] != '\0')
+	avance = 0;
+	while (src[avance] != '\0')
 	{
-		i++;
+		dest[avance] = src[avance];
+		avance++;
 	}
-	while (src[n] != '\0')
-	{
-		dest[i + n] = src[n];
-		n++;
-	}
-	return(dest);
-}
-
-int main()
-{
-	char dest[50] = "frite";
-	char src[] = "steak";
-	printf("%s", ft_strcat(dest, src));
+	dest[avance] = '\0';
+	return (dest);
 }
