@@ -1,0 +1,7 @@
+Credentials cache: API:0AA6460B-EDB4-4B7A-A84E-EBD82B1962E1
+        Principal: lbenaim@42.FR
+
+  Issued                Expires               Principal
+Aug 26 15:51:46 2019  Sep  2 15:51:46 2019  krbtgt/42.FR@42.FR
+Aug 26 15:51:47 2019  Sep  2 15:51:46 2019  ldap/ldap-proxy.42.fr@42.FR
+Aug 26 15:51:47 2019  Sep  2 15:51:46 2019  HTTP/student-storage-1.42.fr@42.FR
