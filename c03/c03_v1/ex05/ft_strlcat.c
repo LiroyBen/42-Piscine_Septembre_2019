@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strncpy.c                                          :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenaim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/04 19:01:06 by lbenaim           #+#    #+#             */
-/*   Updated: 2019/09/09 17:08:47 by lbenaim          ###   ########.fr       */
+/*   Created: 2019/09/09 20:16:22 by lbenaim           #+#    #+#             */
+/*   Updated: 2019/09/09 20:16:54 by lbenaim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	unsigned int i;
+	unsigned int n;
+	unsigned int a;
 
 	i = 0;
-	while (i < n && src[i] != '\0')
+	n = 0;
+	a = 0;
+	while (dest[i] != '\0')
 	{
-		dest[i] = src[i];
 		i++;
 	}
-	while (i < n)
+	while (src[n] != '\0' && a < size)
 	{
-		dest[i] = '\0';
-		i++;
+		dest[i + n] = src[n];
+		n++;
 	}
-	return (dest);
-}
-
-int main()
-{
-	char src[] = "test";
-	char dest[50] = "ec";
-	printf("%s", ft_strncpy(dest, src, 7));
+	dest[i + n] = '\0';
+	while (src[a] != '\0')
+	{
+		a++;
+	}
+	return (a + size);
 }

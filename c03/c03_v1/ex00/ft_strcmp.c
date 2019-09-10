@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strncpy.c                                          :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenaim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/04 19:01:06 by lbenaim           #+#    #+#             */
-/*   Updated: 2019/09/09 17:08:47 by lbenaim          ###   ########.fr       */
+/*   Created: 2019/09/05 21:26:50 by lbenaim           #+#    #+#             */
+/*   Updated: 2019/09/09 20:06:50 by lbenaim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int	ft_strcmp(char *s1, char *s2)
 {
-	unsigned int i;
+	int i;
 
 	i = 0;
-	while (i < n && src[i] != '\0')
+	while (s1[i] == s2[i])
 	{
-		dest[i] = src[i];
+		if (s1[i] == '\0' && s2[i] == '\0')
+		{
+			return (0);
+		}
 		i++;
 	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
-}
-
-int main()
-{
-	char src[] = "test";
-	char dest[50] = "ec";
-	printf("%s", ft_strncpy(dest, src, 7));
+	return (s1[i] - s2[i]);
 }

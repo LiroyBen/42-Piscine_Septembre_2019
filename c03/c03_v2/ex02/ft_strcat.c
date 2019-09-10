@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strncpy.c                                          :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenaim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/04 19:01:06 by lbenaim           #+#    #+#             */
-/*   Updated: 2019/09/09 17:08:47 by lbenaim          ###   ########.fr       */
+/*   Created: 2019/09/09 20:11:13 by lbenaim           #+#    #+#             */
+/*   Updated: 2019/09/10 17:56:41 by lbenaim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+char	*ft_strcat(char *dest, char *src)
 {
-	unsigned int i;
+	int i;
+	int n;
 
 	i = 0;
-	while (i < n && src[i] != '\0')
+	n = 0;
+	while (dest[i] != '\0')
 	{
-		dest[i] = src[i];
 		i++;
 	}
-	while (i < n)
+	while (src[n] != '\0')
 	{
-		dest[i] = '\0';
+		dest[i] = src[n];
 		i++;
+		n++;
 	}
+	dest[i] = '\0';
 	return (dest);
-}
-
-int main()
-{
-	char src[] = "test";
-	char dest[50] = "ec";
-	printf("%s", ft_strncpy(dest, src, 7));
 }
