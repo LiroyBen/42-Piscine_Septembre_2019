@@ -6,7 +6,7 @@
 /*   By: lbenaim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 22:22:15 by lbenaim           #+#    #+#             */
-/*   Updated: 2019/09/10 22:27:28 by lbenaim          ###   ########.fr       */
+/*   Updated: 2019/09/12 15:57:38 by lbenaim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void ft_putstr(char *str)
+void	ft_putstr(char *str)
 {
 	int i;
 
