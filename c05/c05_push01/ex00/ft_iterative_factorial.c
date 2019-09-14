@@ -1,36 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_prime.c                                      :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenaim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/13 17:38:59 by lbenaim           #+#    #+#             */
-/*   Updated: 2019/09/14 13:50:48 by lbenaim          ###   ########.fr       */
+/*   Created: 2019/09/12 16:44:06 by lbenaim           #+#    #+#             */
+/*   Updated: 2019/09/14 13:52:03 by lbenaim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int	ft_is_prime(int nb)
+int	ft_iterative_factorial(int nb)
 {
-	int i;
+	int multiple;
 
-	i = 2;
-	if ((nb == 1) || (nb == 0))
+	multiple = 1;
+	while (nb >= 1)
 	{
-		return (0);
+		multiple = multiple * nb;
+		nb--;
 	}
-	while (i <= nb / i)
-	{
-		if (nb % i == 0)
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
-int main()
-{
-	printf("%d", ft_is_prime(1));
+	return (multiple);
 }
