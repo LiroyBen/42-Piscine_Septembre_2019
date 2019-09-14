@@ -6,7 +6,7 @@
 /*   By: lbenaim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/13 14:11:37 by lbenaim           #+#    #+#             */
-/*   Updated: 2019/09/14 15:44:48 by lbenaim          ###   ########.fr       */
+/*   Updated: 2019/09/14 15:47:53 by lbenaim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int	ft_recursive_factorial(int nb)
 	int multiple;
 
 	multiple = 1;
-	if ((nb < 0) || (nb > 12))
+	if (nb < 0)
 	{
 		return (0);
 	}
@@ -24,9 +24,4 @@ int	ft_recursive_factorial(int nb)
 		return (1);
 	}
 	return (nb * ft_recursive_factorial(nb - 1));
-}
-
-int main()
-{
-	printf("%d", ft_recursive_factorial(-12));
 }
