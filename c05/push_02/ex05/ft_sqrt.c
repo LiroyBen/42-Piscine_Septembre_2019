@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenaim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/06 12:37:55 by lbenaim           #+#    #+#             */
-/*   Updated: 2019/09/10 15:12:03 by lbenaim          ###   ########.fr       */
+/*   Created: 2019/09/13 16:54:10 by lbenaim           #+#    #+#             */
+/*   Updated: 2019/09/14 16:23:39 by lbenaim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_sqrt(int nb)
 {
-	unsigned int i;
+	int n;
 
-	i = 0;
-	while (s1[i] == s2[i] && i < n)
+	n = 1;
+	if (nb == 0)
 	{
-		i++;
-		if (i == n)
-		{
-			return (0);
-		}
+		return (0);
 	}
-	return (s1[i] - s2[i]);
+	while (n < 46500)
+	{
+		while ((n * n) < nb)
+		{
+			n++;
+		}
+		if ((n * n) == nb)
+			return (n);
+		else
+			return (0);
+	}
+	return (0);
 }
