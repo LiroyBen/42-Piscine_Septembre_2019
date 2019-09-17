@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_boolean.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenaim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/15 15:38:11 by lbenaim           #+#    #+#             */
-/*   Updated: 2019/09/17 15:47:50 by lbenaim          ###   ########.fr       */
+/*   Created: 2019/09/17 22:43:14 by lbenaim           #+#    #+#             */
+/*   Updated: 2019/09/17 22:58:16 by lbenaim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#ifndef FT_BOOLEAN_H
+# define FT_BOOLEAN_H
 
-char	*ft_strdup(char *src)
-{
-	char	*chaine;
-	int		i;
-	int		size;
+# include <unistd.h>
 
-	size = 0;
-	while (src[size])
-		++size;
-	if (!(chaine = malloc(sizeof(char) * (size + 1))))
-		return (NULL);
-	i = 0;
-	while (src[i])
-	{
-		chaine[i] = src[i];
-		i++;
-	}
-	chaine[i] = '\0';
-	return (chaine);
-}
+# define EVEN(x) x % 2 == 0
+# define EVEN_MSG "I have an even number of arguments.\n"
+# define ODD_MSG "I have an odd number of arguments.\n"
+# define TRUE 1
+# define FALSE 0
+# define SUCCESS 0
+
+typedef	int	t_bool;
+
+#endif

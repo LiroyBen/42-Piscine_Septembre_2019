@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenaim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/15 15:38:11 by lbenaim           #+#    #+#             */
-/*   Updated: 2019/09/17 15:47:50 by lbenaim          ###   ########.fr       */
+/*   Created: 2019/09/17 13:42:52 by lbenaim           #+#    #+#             */
+/*   Updated: 2019/09/17 17:56:47 by lbenaim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char	*ft_strdup(char *src)
+int	ft_ultimate_range(int **range, int min, int max)
 {
-	char	*chaine;
-	int		i;
-	int		size;
+	int i;
+	int *tab;
 
-	size = 0;
-	while (src[size])
-		++size;
-	if (!(chaine = malloc(sizeof(char) * (size + 1))))
-		return (NULL);
-	i = 0;
-	while (src[i])
+	if (min >= max)
 	{
-		chaine[i] = src[i];
-		i++;
+		*range = (void *)0;
+		return (0);
 	}
-	chaine[i] = '\0';
-	return (chaine);
+	tab = (int*)malloc(sizeof(*tab) * (max - min));
+	i = 0;
+	while (min < max)
+	{
+		tab[i] = min;
+		i++;
+		min++;
+	}
+	*range = tab;
+	return (i);
 }

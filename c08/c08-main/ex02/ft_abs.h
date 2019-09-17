@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_abs.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenaim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/15 15:38:11 by lbenaim           #+#    #+#             */
-/*   Updated: 2019/09/17 15:47:50 by lbenaim          ###   ########.fr       */
+/*   Created: 2019/09/17 23:00:07 by lbenaim           #+#    #+#             */
+/*   Updated: 2019/09/17 23:03:34 by lbenaim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#ifndef FT_ABS_H
+# define FT_ABS_H
 
-char	*ft_strdup(char *src)
-{
-	char	*chaine;
-	int		i;
-	int		size;
+# define ABS(x) (x > 0 ? x : -x)
 
-	size = 0;
-	while (src[size])
-		++size;
-	if (!(chaine = malloc(sizeof(char) * (size + 1))))
-		return (NULL);
-	i = 0;
-	while (src[i])
-	{
-		chaine[i] = src[i];
-		i++;
-	}
-	chaine[i] = '\0';
-	return (chaine);
-}
+#endif
