@@ -1,39 +1,14 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    libft_creator.sh                                   :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: lbenaim <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/09/18 23:29:02 by lbenaim           #+#    #+#              #
-#    Updated: 2019/09/19 13:11:44 by lbenaim          ###   ########.fr        #
+#    Created: 2019/09/18 23:22:58 by lbenaim           #+#    #+#              #
+#    Updated: 2019/09/18 23:27:49 by lbenaim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= srcs/ft_putchar.c srcs/ft_swap.c srcs/ft_putstr.c srcs/ft_strlen.c srcs/ft_strcmp.c
-
-HDR		= -Iincludes
-
-OBJS	= ${SRCS:.C=.O}
-
-CFLAGS	= -Wall -Wextra -Werror
-
-NAME	= libft.a
-
-RM		= rm -f
-
-${NAME}:	${OBJS}
-			ar rc ${NAME} ${OBJS}
-
-all:	${NAME}
-
-.c.o:
-		gcc ${CFLAGS} ${HDR} -c $< -o ${<:.c=.o}
-
-clean:
-		${RM} ${OBJS}
-
-fclean: clean
-		${RM} ${NAME}
-
-re:	fclean all
+gcc -c ft_putchar.c ft_swap.c ft_putstr.c ft_strlen.c ft_strcmp.c && \
+ar rc libft.a ft_putchar.o ft_swap.o ft_putstr.o ft_strlen.o ft_strcmp.o

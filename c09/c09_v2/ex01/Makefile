@@ -5,35 +5,41 @@
 #                                                     +:+ +:+         +:+      #
 #    By: lbenaim <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/09/18 23:29:02 by lbenaim           #+#    #+#              #
-#    Updated: 2019/09/19 13:11:44 by lbenaim          ###   ########.fr        #
+#    Created: 2019/09/19 17:47:00 by lbenaim           #+#    #+#              #
+#    Updated: 2019/09/19 17:47:13 by lbenaim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= srcs/ft_putchar.c srcs/ft_swap.c srcs/ft_putstr.c srcs/ft_strlen.c srcs/ft_strcmp.c
+NAME = libft.a
 
-HDR		= -Iincludes
+SRCS = srcs/ft_putchar.c srcs/ft_swap.c srcs/ft_putstr.c srcs/ft_strlen.c srcs/ft_strcmp.c
 
-OBJS	= ${SRCS:.C=.O}
+INCLUDES = includes
 
-CFLAGS	= -Wall -Wextra -Werror
+OBJS = ${SRCS:.c=.o}
 
-NAME	= libft.a
+GCC = gcc
 
-RM		= rm -f
+RM = rm -f
 
-${NAME}:	${OBJS}
-			ar rc ${NAME} ${OBJS}
+AR = ar rc
 
-all:	${NAME}
+CFLAGS = -Wall -Wextra -Werror -I${INCLUDES}
 
 .c.o:
-		gcc ${CFLAGS} ${HDR} -c $< -o ${<:.c=.o}
+				${GCC} ${CFLAGS} -c $< -o ${<:.c=.o}
+
+${NAME}:	${OBJS}
+				${AR} ${NAME} ${OBJS}
+
+all:		${NAME}
 
 clean:
-		${RM} ${OBJS}
+				${RM} ${OBJS}
 
-fclean: clean
-		${RM} ${NAME}
+fclean:		clean
+				${RM} ${NAME}
 
-re:	fclean all
+re:			fclean all
+
+.PHONY:		all clean fclean re
