@@ -1,0 +1,26 @@
+ystème d'exploitation
+Composant basique d'un ordinateurs :
+	- Processeurs
+	- Mémoire
+	- Satockage
+	- Apperiels (usb)
+Connexion internet
+
+The "host" est l'ordinateur physique et le système d'exploitation installé sur notre ordinateur. Composant physique processeurs, mémoire et stockage
+The "guest" : l'oridnateur virtuelle qui permet la connexion physique du hardware
+
+
+Il y a deux types de hypervisors :
+	1) Native/Bare Metal, march directement sans d'os entre les deux
+	2) Hosted : Permet d'avoir plusieurs "guest" pris en charge par la machine physique. Vmware est en ai un.
+	(ESX)
+Quand on définit les composants d'une machine virtuel cela les reserve pour la vm donc les autres logiciels local ont moins de ressources
+
+Quand on créer une VM on a une VM shell vide
+	- On a le hardware virtuel
+	- Le bios virtuel
+	- Et pas d'os
+	
+
+Chaque vm a un dossier Virtual Machine, qui contient la configuration .vmx, les fichiers .vmdk sont les fichier qui contient l'espace de stockage, .vmsd Virtual Machine snapshots
+
